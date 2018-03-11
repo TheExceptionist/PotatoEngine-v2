@@ -22,6 +22,7 @@ object_t* startObject = NULL;
 //Initialize main components, first system to initialize in the engine
 static void Main_Init(void)
 {
+	Con_WriteConsole("Creating Player....");
 	//Initialize member attributes
 	player.pos.x = 4.5;
 	player.pos.y = 4.5;
@@ -35,6 +36,7 @@ static void Main_Init(void)
 	//Set the global player pointer to point to the player object
 	GPlayer = &player;
 
+	Con_WriteConsole("Player created successfully.");
 	//Initialize the window
 	Win_Init();
 }
@@ -51,6 +53,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPSTR lCmdLine, 
 	if (!bRunning) {
 		bRunning = TRUE;
 	}
+
+	//Create a new console
+	Con_CreateConsole();
+
+	//Create a new thread to execute the readconsole function
+
 
 	//Set the Global hinstance variable to the process instance
 	GInstance = hInstance;
@@ -73,6 +81,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPSTR lCmdLine, 
 		Host_Frame(timestep);
 	}
 
+	//Shutdown the console, it's the last system to shutdown
+	Con_Shutdown();
 	//Exit when running == FALSE
 	return EXIT_SUCCESS;
 }

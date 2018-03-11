@@ -45,6 +45,15 @@
     <ClCompile Include="gfx_h.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="console.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_std.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="host.h">
@@ -75,6 +84,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gfx_l.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_std.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

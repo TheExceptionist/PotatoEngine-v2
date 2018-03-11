@@ -109,6 +109,8 @@ static void Win_CreateWindow(void)
 	r.bottom = WINDOW_HEIGHT;
 	AdjustWindowRectEx(&r, dwWindowStyle, 0, dwExStyle);
 
+	Con_WriteConsole("Creating a new window...");
+
 	hwndMainWindow = CreateWindowEx(
 		dwExStyle,
 		CLASS_NAME,
@@ -124,8 +126,10 @@ static void Win_CreateWindow(void)
 		NULL
 	);
 
+	Con_WriteConsole("Showing the new window...");
 	ShowWindow(hwndMainWindow, SW_SHOWDEFAULT);
 
+	Con_WriteConsole("Filling the window with the color black..");
 	HDC hdcDeviceContext = GetDC(hwndMainWindow);
 	PatBlt(hdcDeviceContext, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, BLACKNESS);
 	ReleaseDC(hwndMainWindow, hdcDeviceContext);
@@ -134,7 +138,9 @@ static void Win_CreateWindow(void)
 //Initialize the window systems
 void Win_Init(void)
 {
+	Con_WriteConsole("Initializing Windows Subsystems...");
 	Win_Register();
 	Win_CreateWindow();
+	Con_WriteConsole("Windows Subsystems Initialized!");
 }
 

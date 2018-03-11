@@ -121,11 +121,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cam.c" />
+    <ClCompile Include="console.c" />
     <ClCompile Include="gfx_h.c" />
     <ClCompile Include="gfx_l.c" />
     <ClCompile Include="host.c" />
     <ClCompile Include="input.c" />
+    <ClCompile Include="io.c" />
     <ClCompile Include="p_math.c" />
+    <ClCompile Include="p_std.c" />
     <ClCompile Include="p_types.h" />
     <ClCompile Include="main.c" />
     <ClCompile Include="sys.c" />
@@ -133,12 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cam.h" />
+    <ClInclude Include="console.h" />
     <ClInclude Include="gfx_l.h" />
     <ClInclude Include="gfx_h.h" />
     <ClInclude Include="host.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="io.h" />
     <ClInclude Include="p_math.h" />
     <ClInclude Include="p_def.h" />
+    <ClInclude Include="p_std.h" />
     <ClInclude Include="p_win.h" />
     <ClInclude Include="sys.h" />
     <ClInclude Include="win.h" />

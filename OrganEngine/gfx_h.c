@@ -15,6 +15,8 @@ BITMAPINFO BitMapInfo = { 0 };
 //Cleanup and Shutdown teh graphics system
 void GFX_Shutdown(void)
 {
+	Con_WriteConsole("Freeing Back Buffer.");
+
 	free(dblBuffer);
 	dblBuffer = NULL;
 }
@@ -57,6 +59,7 @@ void GFX_Update(void)
 //Initialize the double buffer
 void GFX_InitBuffer(void)
 {
+	Con_WriteConsole("Initializing Buffer...");
 	//define bitmap info
 	BitMapInfo.bmiHeader.biSize = sizeof(BitMapInfo.bmiHeader);
 	BitMapInfo.bmiHeader.biWidth = BUFFER_WIDTH;
@@ -73,6 +76,7 @@ void GFX_InitBuffer(void)
 //Initialize the graphics sysytems
 void GFX_Init(void)
 {
+	Con_WriteConsole("Creating Graphics...");
 	GFX_InitBuffer();
 	GFX_InitColors();
 }

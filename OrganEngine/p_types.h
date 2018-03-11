@@ -18,6 +18,15 @@ typedef int8_t int8;
 typedef uint32_t nat;
 
 
+typedef struct p_string_s p_string_t;
+
+struct p_string_s
+{
+	const char* c;
+	int length;
+};
+
+
 //3D Vector type, currently only the x and y components 
 typedef struct vector3D vec3;
 

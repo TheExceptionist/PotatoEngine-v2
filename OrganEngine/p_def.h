@@ -13,6 +13,9 @@
 #include "p_math.h"
 #include "cam.h"
 #include "input.h"
+#include "io.h"
+#include "console.h"
+#include "p_std.h"
 
 #define MAPWIDTH 10
 #define MAPHEIGHT 14

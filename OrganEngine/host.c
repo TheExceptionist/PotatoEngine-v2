@@ -85,9 +85,12 @@ int Host_ValidateTimestep(int timestep)
 	timeAcc += timestep;
 
 	if (timeAcc - oldTimeAcc < 1) {
+		//Con_WriteConsole("System slowing down! Check CPU Usage.");
 		return 0;
 	}
 
+	Con_WriteConsole("=====================================");
+	Con_WriteConsole("System slowing down! Check CPU Usage.");
 	oldTimeAcc = timeAcc;
 	return 1;
 }
@@ -113,6 +116,7 @@ void Host_Frame(float timestep)
 //Shutdown all systems currently being used
 void Host_Shutdown(void)
 {
+	Con_WriteConsole("Shutting down the host.");
 	//Shutdown both the graphics and system
 	GFX_Shutdown();
 	Sys_Shutdown();
